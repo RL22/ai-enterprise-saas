@@ -5,18 +5,20 @@ teams:
     leverages: 
       - "monorepo-architect"
 
-  Frontend_Engineer:
-    role: "Frontend Engineer"
-    description: "Specializes in Next.js 16 App Router, React 19 Server Components, Tailwind v4, and shadcn/ui. Responsible for scaffolding all visual UI in apps/marketing and packages/ui."
-    leverages: 
-      - "ai-native-ux"
-
-  Backend_Architect:
-    role: "Backend Architect"
-    description: "Specializes in Drizzle ORM, PostgreSQL, and Better Auth. Manages packages/db, handles Stripe webhooks, and writes core Next.js Server Actions for data mutation."
+  Core_App_Engineer:
+    role: "Core App Engineer"
+    description: "Owns apps/saas end-to-end. Specializes in Next.js 16 Server Components, Server Actions, Drizzle ORM, and Better Auth. Responsible for full-stack feature delivery within the core multi-tenant dashboard."
     leverages: 
       - "server-first-data"
       - "b2b-identity-and-billing"
+      - "ai-native-ux"
+
+  Marketing_Growth_Engineer:
+    role: "Marketing Growth Engineer"
+    description: "Owns apps/marketing end-to-end. Specializes in Next.js 16, Sanity GROQ, Tailwind v4, and Shadcn/ui. Responsible for high-performance, SEO-optimized marketing and landing pages."
+    leverages: 
+      - "headless-content-modeling"
+      - "ai-native-ux"
 
   AI_Integration_Lead:
     role: "AI Integration Lead"

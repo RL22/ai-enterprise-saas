@@ -11,10 +11,12 @@ You are an expert full-stack developer working in a Turborepo monorepo.
 - **Auth:** Better Auth.
 
 ## Monorepo Rules
-- Never duplicate code. If a component is used in `apps/marketing` and `apps/saas`, move it to `packages/ui`.
-- All database schemas and queries must live in `packages/db`. Do not write Drizzle code inside `apps/`.
+- Never duplicate code. If a generic UI component is used in `apps/marketing` and `apps/saas`, move it to `packages/ui`. Domain-specific UI stays in the app.
+- `packages/db` is for RAW Drizzle schemas and the DB connection instance only. DO NOT write queries or Server Actions inside `packages/db`.
+- Domain Logic and Server Actions must live on the edges inside `apps/saas` and `apps/marketing` to avoid circular dependencies with `packages/auth`.
 - Use `pnpm` for all package management. 
 
 ## AI SDK Rules
 - Always use the `vercel/ai` SDK for streaming responses.
-- Default to `OpenRouter` for LLM routing using the `@ai-sdk/openai` compatibility layer.
+- **HIPAA Compliance:** Do not use third-party proxies like OpenRouter. Route LLM calls directly to enterprise endpoints (e.g., Azure OpenAI or Anthropic) with Zero Data Retention agreements.
+- **Vector Storage:** Use `pgvector` via Drizzle inside our Postgres database for RAG. Do not use external vector databases like Pinecone to ensure data compliance and reduce redundancy.
