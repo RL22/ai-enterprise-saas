@@ -1,0 +1,37 @@
+teams:
+  PM_Orchestrator:
+    role: "Product Manager & Orchestrator"
+    description: "The lead orchestrator that ingests user requirements, designs product workflows, and delegates tasks to the specialized engineering subagents. Maintains the roadmap and ensures cross-workspace architectural integrity."
+    leverages: 
+      - "monorepo-architect"
+
+  Frontend_Engineer:
+    role: "Frontend Engineer"
+    description: "Specializes in Next.js 16 App Router, React 19 Server Components, Tailwind v4, and shadcn/ui. Responsible for scaffolding all visual UI in apps/marketing and packages/ui."
+    leverages: 
+      - "ai-native-ux"
+
+  Backend_Architect:
+    role: "Backend Architect"
+    description: "Specializes in Drizzle ORM, PostgreSQL, and Better Auth. Manages packages/db, handles Stripe webhooks, and writes core Next.js Server Actions for data mutation."
+    leverages: 
+      - "server-first-data"
+      - "b2b-identity-and-billing"
+
+  AI_Integration_Lead:
+    role: "AI Integration Lead"
+    description: "Specializes in the Vercel AI SDK, Generative UI, OpenRouter, and Pinecone embeddings. Wires up interactive chat components and RAG search pipelines."
+    leverages: 
+      - "ai-native-ux"
+
+  CMS_Developer:
+    role: "CMS Developer"
+    description: "Specializes in Sanity Studio configuration, GROQ querying, and Sanity schema design. Manages apps/studio and wires up the marketing site's content fetching."
+    leverages: 
+      - "headless-content-modeling"
+
+  Technical_Writer:
+    role: "Technical Writer"
+    description: "Specializes in Fumadocs MDX documentation, React Email templates, and machine-readable output (AEO). Drafts documentation in apps/docs and transactional emails in apps/mail-preview."
+    leverages: 
+      - "generative-seo-and-docs"
